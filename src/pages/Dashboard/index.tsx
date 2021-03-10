@@ -1,7 +1,7 @@
-import React, { InputHTMLAttributes, useRef } from 'react';
+import React, { useRef } from 'react';
 
 const Header: React.FC = () => {
-  const inputRef = useRef<HTMLElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <>
@@ -11,8 +11,9 @@ const Header: React.FC = () => {
           type="checkbox"
           id="myCheck"
           className="btn"
+          ref={inputRef}
           onClick={() => alert('click event occured')}
-          onMouseOver={() => inputRef.click()}
+          onMouseOver={() => inputRef?.current?.click()}
           onFocus={this}
         />
         <input type="checkbox" id="myCheck2" onClick={() => alert('check2')} />
